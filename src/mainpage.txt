@@ -1,0 +1,10 @@
+'mainpage.txt
+/**
+         @mainpage M_factor Fortran Library
+
+         @section Introduction
+
+     M_factor - Fortran modules for factoring numbers
+
+         @image html html/images/factor.gif
+*/'
