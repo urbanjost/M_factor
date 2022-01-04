@@ -1,4 +1,4 @@
-$DOCUMENT NULL
+$BLOCK NULL
 Ulam spiral (for primes)
 
 Task
@@ -95,7 +95,7 @@ AUTHOR
    John S. Urban
 LICENSE
    MIT License
-$DOCUMENT END
+$BLOCK
 program ulam
   implicit none
  

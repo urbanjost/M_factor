@@ -46,7 +46,7 @@ logical             :: verbose=.false.
 
 end program find_lcm
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$DOCUMENT HELP -file lcm.1.man
+$BLOCK HELP -file lcm.1.man
 NAME
        lcm(1f) - [NUMBERS] display least common multiple of a list of whole numbers
        (LICENSE:PD)
@@ -88,9 +88,9 @@ AUTHOR
 LICENSE
    Public Domain
 
-$DOCUMENT END
+$BLOCK
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$DOCUMENT VERSION
+$BLOCK VERSION
 PRODUCT:        GPF (General Purpose Fortran) utilities and examples
 PROGRAM:        lcm(1f)
 DESCRIPTION:    Determine least common multiple of a list of integers
@@ -99,5 +99,5 @@ AUTHOR:         John S. Urban
 REPORTING BUGS: http://www.urbanjost.altervista.org/
 HOME PAGE:      http://www.urbanjost.altervista.org/index.html
 UUID:           8f39b1e5-592f-4a22-946f-b8da2aa49633
-$DOCUMENT END
+$BLOCK
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

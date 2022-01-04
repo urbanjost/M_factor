@@ -59,7 +59,7 @@ integer             :: iend=0
 
 end program find_prime_factors
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$DOCUMENT HELP -file factors.1.man
+$BLOCK HELP -file factors.1.man
 NAME
        factors(1f) - [NUMBERS] display prime factors of numbers
        (LICENSE:PD)
@@ -113,9 +113,9 @@ AUTHOR
    John S. Urban
 LICENSE
    Public Domain
-$DOCUMENT END
+$BLOCK
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$DOCUMENT VERSION
+$BLOCK VERSION
 PRODUCT:        GPF (General Purpose Fortran) utilities and examples
 PROGRAM:        factors(1f)
 DESCRIPTION:    Determine prime factors of numbers
@@ -126,5 +126,5 @@ AUTHOR:         John S. Urban
 REPORTING BUGS: http://www.urbanjost.altervista.org/
 HOME PAGE:      http://www.urbanjost.altervista.org/index.html
 LICENSE:        Public Domain
-$DOCUMENT END
+$BLOCK
 $!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
