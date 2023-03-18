@@ -4,13 +4,13 @@ src_dir: src
          example
          test
 output_dir: docs/fpm-ford
-project: easy
-summary: easy project
-project_github: https://github.com/urbanjost/easy
+project: M_factors
+summary: Common and Prime Factorization
+project_github: https://github.com/urbanjost/M_factors
 project_download:
-author: John Doe
+author: John S. Urban
 author_email: urbanjost@gmail.com
-github: https://github.com/urbanjost/easy
+github: https://github.com/urbanjost/M_factors
 media_dir: docs/images
 exclude_dir: archive
              FODDER
@@ -26,4 +26,6 @@ extra_mods: iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORT
 creation_date: %Y-%m-%d %H:%M %z
 md_extensions: markdown.extensions.toc
                markdown.extensions.smarty
+---
+{!README.md!}
 ---
