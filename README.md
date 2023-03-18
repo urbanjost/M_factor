@@ -10,7 +10,11 @@ gets a little more difficult when your factors can only be whole numbers.
 The factors are any of the numbers (or symbols) that form a product when
 multiplied together.
 
+<<<<<<< HEAD
 So, for example an **Integer Factor** is one of two or more integers
+=======
+So, for example an Integer Factor is one of two or more integers
+>>>>>>> c5fe69bbcdaa21addf404b97d9c27f1fa47c87df
 that can be exactly divided into another integer.
 
 Another equivalent way to define "factor" is that it is quantity which
@@ -21,9 +25,15 @@ variable.
 
 There are a few basic example programs included as well ...
 
+<<<<<<< HEAD
 + **lcm**        -  display least common multiple of a list of whole numbers
 + **factors**    - [NUMBERS] display prime factors of numbers
 + **gcd**        - [NUMBERS] display greatest common divisor of a list of whole numbers
+=======
++ lcm        -  display least common multiple of a list of whole numbers
++ factors    - [NUMBERS] display prime factors of numbers
++ gcd        - [NUMBERS] display greatest common divisor of a list of whole numbers
+>>>>>>> c5fe69bbcdaa21addf404b97d9c27f1fa47c87df
 
 Everything is gathered into the Fortran module M_factor.f90. So far ...
 
@@ -124,10 +134,17 @@ program that exercise the routine.
    [routines](https://urbanjost.github.io/M_factor/man3.html) 
    and [programs](https://urbanjost.github.io/M_factor/man1.html) 
 
+<<<<<<< HEAD
 
    - ![man-pages](docs/images/manpages.gif)
      There are man-pages in the repository download in the docs/ directory
      that may be installed on ULS (Unix-Like Systems).
+=======
+   - There are man-pages in the repository download in the docs/ directory
+     that may be installed on ULS (Unix-Like Systems).
+
+   - ![man-pages](docs/images/manpages.gif)
+>>>>>>> c5fe69bbcdaa21addf404b97d9c27f1fa47c87df
       + [manpages.zip](https://urbanjost.github.io/M_factor/manpages.zip)
       + [manpages.tgz](https://urbanjost.github.io/M_factor/manpages.tgz)
 
@@ -146,4 +163,8 @@ program that exercise the routine.
 
 ## References
 
+<<<<<<< HEAD
    * [Wikipedia - Factorization](https://en.wikipedia.org/wiki/Factorization)
+=======
+   * [Wikipedia](https://en.wikipedia.org/wiki/Factorization)
+>>>>>>> c5fe69bbcdaa21addf404b97d9c27f1fa47c87df
