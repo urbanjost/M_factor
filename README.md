@@ -1,8 +1,10 @@
 ## ![M_factor](docs/images/factor.gif)
 # M_factor
 
-This will be a collection of factorization of integers and polynomials,
-and prime factorization.
+This is a growing collection of Fortran procedures related to
+factorization of integers and polynomials, and prime factorization.
+
+## Introduction
 
 Division is basically the reverse operation of multiplication. But it
 gets a little more difficult when your factors can only be whole numbers.
@@ -16,17 +18,16 @@ that can be exactly divided into another integer.
 Another equivalent way to define "factor" is that it is quantity which
 is multiplied by another quantity.
 
-This is in contrast to statistics, which a factor can mean any independent
+This is in contrast to statistics, where a factor can mean any independent
 variable.
 
 There are a few basic example programs included as well ...
-So, for example an Integer Factor is one of two or more integers
 
 + **lcm**        -  display least common multiple of a list of whole numbers
 + **factors**    - [NUMBERS] display prime factors of numbers
 + **gcd**        - [NUMBERS] display greatest common divisor of a list of whole numbers
 
-Everything is gathered into the Fortran module M_factor.f90. So far ...
+All the procedures are gathered into the Fortran module M_factor.f90. So far ...
 
 ## Name
   M_factor(3fm) - module for least common multiple, greatest
