@@ -227,7 +227,7 @@ integer function lcm(i,j)
 use, intrinsic :: iso_fortran_env, only : int64
 implicit none
 
-! ident_1="@(#)M_factor::lcm(3fp): least common multiple of two integers"
+! ident_1="@(#) M_factor lcm(3fp) least common multiple of two integers"
 
 integer,intent(in)   :: i,j
 integer(kind=int64) :: lcm_big
@@ -266,7 +266,7 @@ end function lcm
 integer function lcm_vector(m)
 implicit none
 
-! ident_2="@(#)M_factor::lcm_vector(3fp): least common multiple of integer array m(:)"
+! ident_2="@(#) M_factor lcm_vector(3fp) least common multiple of integer array m( )"
 
 integer,intent(in)  :: m(:)
 integer             :: i
@@ -303,7 +303,7 @@ end function lcm_vector
 integer function lcm_matrix(m)
 implicit none
 
-! ident_3="@(#)M_factor::lcm_matrix(3fp):least common multiple of integer matrix m(:,:)"
+! ident_3="@(#) M_factor lcm_matrix(3fp) least common multiple of integer matrix m( )"
 
 integer,intent(in) :: m(:,:)
    lcm_matrix=lcm_vector(reshape(m,[size(m)]))
@@ -327,7 +327,7 @@ end function lcm_matrix
 integer function lcm_cuboid(m)
 implicit none
 
-! ident_4="@(#)M_factor::lcm_cuboid(3fp):least common multiple of integer cuboid m(:,:,:)"
+! ident_4="@(#) M_factor lcm_cuboid(3fp) least common multiple of integer cuboid m( )"
 
 integer,intent(in) :: m(:,:,:)
    lcm_cuboid=lcm_vector(reshape(m,[size(m)]))
@@ -482,7 +482,7 @@ end function lcm_cuboid
 function gcd(m,n) result(answer)
 implicit none
 
-! ident_5="@(#)M_factor::gcd(3fp): compute greatest common divisor of two integers"
+! ident_5="@(#) M_factor gcd(3fp) compute greatest common divisor of two integers"
 
 integer,intent(in)  :: m, n
 integer             :: answer
@@ -528,7 +528,7 @@ end function gcd_2
 integer function gcd_vector(m)
 implicit none
 
-! ident_6="@(#)M_factor::gcd_vector(3fp):greatest common divisor of integer vector m(:)"
+! ident_6="@(#) M_factor gcd_vector(3fp) greatest common divisor of integer vector m( )"
 
 integer,intent(in) :: m(:)
 integer            :: vsize
@@ -550,7 +550,7 @@ end function gcd_vector
 integer function gcd_matrix(m)
 implicit none
 
-! ident_7="@(#)M_factor::gcd_matrix(3fp):greatest common divisor of integer matrix array m(:,:)"
+! ident_7="@(#) M_factor gcd_matrix(3fp) greatest common divisor of integer matrix array m( )"
 
 integer,intent(in) :: m(:,:)
 integer :: i,j
@@ -572,7 +572,7 @@ end function gcd_matrix
 integer function gcd_cuboid(m)
 implicit none
 
-! ident_8="@(#)M_factor::gcd_cuboid(3fp):greatest common divisor of integer cuboid m(:,:,:)"
+! ident_8="@(#) M_factor gcd_cuboid(3fp) greatest common divisor of integer cuboid m( )"
 
 integer,intent(in) :: m(:,:,:)
    gcd_cuboid=gcd_vector(reshape(m,[size(m)]))
@@ -635,7 +635,7 @@ end function gcd_cuboid
 pure elemental function i_is_prime(n)
 implicit none
 
-! ident_9="@(#)M_factor::i_is_prime(3f): reports whether an integer is prime"
+! ident_9="@(#) M_factor i_is_prime(3f) reports whether an integer is prime"
 
 integer,intent(in) :: n
 integer            :: i
@@ -742,7 +742,7 @@ end function I_IS_PRIME
 subroutine prime_factors (number, nprm, iprm, iexp, verbose)
 implicit none
 
-! ident_10="@(#)M_factor::prime_factors(3f):decompose a number into its prime factors"
+! ident_10="@(#) M_factor prime_factors(3f) decompose a number into its prime factors"
 
 integer, intent(in)   :: number  ! number to factor
 integer, intent(out)  :: nprm    ! number of distinct prime factors
