@@ -1,33 +1,35 @@
 ## ![M_factor](docs/images/factor.gif)
 # M_factor
 
-This is a growing collection of Fortran procedures related to
-factorization of integers and polynomials, and prime factorization.
+   This is a growing collection of Fortran procedures related to
+   factorization of integers and polynomials, and prime factorization.
 
 ## Introduction
 
-Division is basically the reverse operation of multiplication. But it
-gets a little more difficult when your factors can only be whole numbers.
+   Division is basically the reverse operation of multiplication. But
+   it gets a little more difficult when your factors can only be whole
+   numbers.
 
-The factors are any of the numbers (or symbols) that form a product when
-multiplied together.
+   The factors are any of the numbers (or symbols) that form a product
+   when multiplied together.
 
-So, for example an **Integer Factor** is one of two or more integers
-that can be exactly divided into another integer.
+   So, for example an **Integer Factor** is one of two or more integers
+   that can be exactly divided into another integer.
 
-Another equivalent way to define "factor" is that it is quantity which
-is multiplied by another quantity.
+   Another equivalent way to define "factor" is that it is quantity
+   which is multiplied by another quantity.
 
-This is in contrast to statistics, where a factor can mean any independent
-variable.
+   This is in contrast to statistics, where a factor can mean any
+   independent variable.
 
-There are a few basic example programs included as well ...
+   There are a few basic example programs included as well ...
 
-+ **lcm**        -  display least common multiple of a list of whole numbers
-+ **factors**    - [NUMBERS] display prime factors of numbers
-+ **gcd**        - [NUMBERS] display greatest common divisor of a list of whole numbers
-
-All the procedures are gathered into the Fortran module M_factor.f90. So far ...
+   + **lcm**      - display least common multiple of a list of whole numbers
+   + **factors**  - display prime factors of numbers
+   + **gcd**      - display greatest common divisor of a list of whole numbers
+   
+   All the procedures are gathered into the Fortran module M_factor.f90. So
+   far ...
 
 ## Name
   M_factor(3fm) - module for least common multiple, greatest
@@ -59,13 +61,13 @@ All the procedures are gathered into the Fortran module M_factor.f90. So far ...
 ## Description
   This module is a collection of procedures that perform common functions
   found in arithmetic and number theory such as Least Common Multiples,
-  Greatest Common Divisors, and Prime Factors of INTEGER variables.  The
-  INTEGER values are typically limited to values up to the magnitude
+  Greatest Common Divisors, and Prime Factors of INTEGER variables.
+  The INTEGER values are typically limited to values up to the magnitude
   (2**31)-1= 2147483647.
 
 ## Examples
-  The individual man(1) pages for each procedure contain examples and a full
-  description of the procedure parameters.
+  The individual man(1) pages for each procedure contain examples and
+  a full description of the procedure parameters.
 
 ---
 ![gmake](docs/images/gnu.gif)

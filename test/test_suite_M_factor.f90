@@ -8,6 +8,10 @@ use :: M_verify,   only : unit_check_command, unit_check_keep_going, unit_check_
 use M_verify, only : unit_check_stop
 use :: M_factor
 implicit none
+interface; subroutine test_greatest_common_divisor(); end ; end interface
+interface; subroutine test_i_is_prime(); end ; end interface
+interface; subroutine test_least_common_multiple(); end ; end interface
+interface; subroutine test_prime_factors(); end ; end interface
 integer,parameter :: HT=9
 unit_check_command=''
 unit_check_keep_going=.true.

@@ -44,7 +44,7 @@ logical             :: verbose=.false.
       endif
    endif
 
-end program find_lcm
+contains
 subroutine help_usage(l_help)
 implicit none
 character(len=*),parameter     :: ident="@(#)help_usage(3f): prints help information"
@@ -168,3 +168,5 @@ help_text=[ CHARACTER(LEN=128) :: &
    stop ! if --version was specified, stop
 endif
 end subroutine help_version
+
+end program find_lcm
