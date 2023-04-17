@@ -1,4 +1,4 @@
-# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
+# TOML file for fpm as described at https://fpm.fortran-lang.org/en/spec/manifest.html
 name = "M_factor"
 version = "0.1.0"
 license = "Public Domain"
@@ -10,6 +10,9 @@ categories = ["factor"]
 keywords = ["fortran", "factor"]
 homepage = "https://github.com/urbanjost/M_factor.git"
 
+[build]
+#module-naming = true
+
 # demo programs
 [install]
 library=true
@@ -19,7 +22,7 @@ name="test_suite"
 source-dir="test"
 main="test_suite_M_factor.f90"
 [test.dependencies]
-M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
+M_framework          = { git = "https://github.com/urbanjost/M_framework.git" }
 
 [dependencies]
 M_kracken      = { git = "https://github.com/urbanjost/M_kracken.git" }

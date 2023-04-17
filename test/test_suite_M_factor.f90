@@ -3,16 +3,15 @@
 !==================================================================================================================================!
 program test_suite_M_factor
 use, intrinsic :: iso_fortran_env, only : ERROR_UNIT
-use :: M_verify,   only : unit_check, unit_check_good, unit_check_bad, unit_check_done, unit_check_start, unit_check_level
-use :: M_verify,   only : unit_check_command, unit_check_keep_going, unit_check_level
-use M_verify, only : unit_check_stop
+use :: M_framework__verify, only : unit_check, unit_check_good, unit_check_bad, unit_check_done, unit_check_start, unit_check_level
+use :: M_framework__verify, only : unit_check_command, unit_check_keep_going, unit_check_level
+use M_framework__verify, only : unit_check_stop
 use :: M_factor
 implicit none
 interface; subroutine test_greatest_common_divisor(); end ; end interface
 interface; subroutine test_i_is_prime(); end ; end interface
 interface; subroutine test_least_common_multiple(); end ; end interface
 interface; subroutine test_prime_factors(); end ; end interface
-integer,parameter :: HT=9
 unit_check_command=''
 unit_check_keep_going=.true.
 unit_check_level=0
@@ -27,7 +26,7 @@ call unit_check_start('M_BRE')
 end program test_suite_M_factor
 !TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 subroutine test_least_common_multiple
-use M_verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
+use M_framework__verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
 use :: M_factor
 implicit none
    call unit_check_start('least_common_multiple')
@@ -80,7 +79,7 @@ end subroutine writeit_v
 end subroutine test_least_common_multiple
 !TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 subroutine test_greatest_common_divisor
-use M_verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
+use M_framework__verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
 use :: M_factor
 implicit none
 integer, allocatable :: matrix(:,:)
@@ -150,7 +149,7 @@ integer, allocatable :: matrix(:,:)
 end subroutine test_greatest_common_divisor
 !TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 subroutine test_i_is_prime
-use M_verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
+use M_framework__verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
 use :: M_factor
 implicit none
 integer   :: i
@@ -189,7 +188,7 @@ integer,parameter :: nn(*)=[      9973, 1127326861, 1127326883, 1127326897, 1127
 end subroutine test_i_is_prime
 !TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 subroutine test_prime_factors
-use M_verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
+use M_framework__verify, only : unit_check, unit_check_good, unit_check_done, unit_check_start, unit_check_level
 use :: M_factor
 implicit none
 integer,allocatable :: primes(:)
