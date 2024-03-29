@@ -46,7 +46,7 @@ logical             :: verbose=.false.
       endif
    endif
 !-----------------------------------------------------------------------------------------------------------------------------------
-end program find_gcd
+contains
 subroutine help_usage(l_help)
 implicit none
 character(len=*),parameter     :: ident="@(#)help_usage(3f): prints help information"
@@ -57,43 +57,43 @@ logical                        :: stopit=.false.
 stopit=.false.
 if(l_help)then
 help_text=[ CHARACTER(LEN=128) :: &
-'NAME                                                                                                                            ',&
-'       gcd(1f) - [NUMBERS] display greatest common divisor of a list of whole numbers                                           ',&
-'       (LICENSE:PD)                                                                                                             ',&
-'                                                                                                                                ',&
-'SYNOPSIS                                                                                                                        ',&
-'       gcd [NUMBERS]...                                                                                                         ',&
-'                                                                                                                                ',&
-'DESCRIPTION                                                                                                                     ',&
-'   Print the gcd (Greatest Common Divisor) of a list of integer whole                                                           ',&
-'   NUMBERS. If none are specified on the command line, read them from                                                           ',&
-'   standard input, one list per line.                                                                                           ',&
-'                                                                                                                                ',&
-'   Typically, the numbers must be positive integers where                                                                       ',&
-'                                                                                                                                ',&
-'      2 <= NUMBER <= (2**31)-1 or 2147483647.                                                                                   ',&
-'                                                                                                                                ',&
-'   but if the result would be larger than (2**31)-1 an error is returned                                                        ',&
-'                                                                                                                                ',&
-'OPTIONS                                                                                                                         ',&
-'       NUMBERS    list of numbers whose greatest common divisor is to be                                                        ',&
-'                  determined                                                                                                    ',&
-'       --help     display this help and exit                                                                                    ',&
-'       --version  output version information and exit                                                                           ',&
-'       --verbose  produce verbose answer instead of simple integer result                                                       ',&
-'EXAMPLE                                                                                                                         ',&
-' Sample Usage:                                                                                                                  ',&
-'                                                                                                                                ',&
-'  gcd 10 34 82                                                                                                                  ',&
-'  2                                                                                                                             ',&
-'                                                                                                                                ',&
-'  gcd 10 34 82 -verbose                                                                                                         ',&
-'  2=gcd([10,34,82])                                                                                                             ',&
-'AUTHOR                                                                                                                          ',&
-'   John S. Urban                                                                                                                ',&
-'LICENSE                                                                                                                         ',&
-'   Public Domain                                                                                                                ',&
-'                                                                                                                                ',&
+'NAME                                                                            ',&
+'       gcd(1f) - [NUMBERS] display greatest common divisor of a list of whole numbers',&
+'       (LICENSE:PD)                                                             ',&
+'                                                                                ',&
+'SYNOPSIS                                                                        ',&
+'       gcd [NUMBERS]...                                                         ',&
+'                                                                                ',&
+'DESCRIPTION                                                                     ',&
+'   Print the gcd (Greatest Common Divisor) of a list of integer whole           ',&
+'   NUMBERS. If none are specified on the command line, read them from           ',&
+'   standard input, one list per line.                                           ',&
+'                                                                                ',&
+'   Typically, the numbers must be positive integers where                       ',&
+'                                                                                ',&
+'      2 <= NUMBER <= (2**31)-1 or 2147483647.                                   ',&
+'                                                                                ',&
+'   but if the result would be larger than (2**31)-1 an error is returned        ',&
+'                                                                                ',&
+'OPTIONS                                                                         ',&
+'       NUMBERS    list of numbers whose greatest common divisor is to be        ',&
+'                  determined                                                    ',&
+'       --help     display this help and exit                                    ',&
+'       --version  output version information and exit                           ',&
+'       --verbose  produce verbose answer instead of simple integer result       ',&
+'EXAMPLE                                                                         ',&
+' Sample Usage:                                                                  ',&
+'                                                                                ',&
+'  gcd 10 34 82                                                                  ',&
+'  2                                                                             ',&
+'                                                                                ',&
+'  gcd 10 34 82 -verbose                                                         ',&
+'  2=gcd([10,34,82])                                                             ',&
+'AUTHOR                                                                          ',&
+'   John S. Urban                                                                ',&
+'LICENSE                                                                         ',&
+'   Public Domain                                                                ',&
+'                                                                                ',&
 '']
    WRITE(*,'(a)')(trim(help_text(i)),i=1,size(help_text))
    stop ! if --help was specified, stop
@@ -156,9 +156,10 @@ help_text=[ CHARACTER(LEN=128) :: &
 '@(#)REPORTING BUGS: http://www.urbanjost.altervista.org/>',&
 '@(#)HOME PAGE:      http://www.urbanjost.altervista.org/index.html>',&
 '@(#)UUID:           8f39b1e5-592f-4a22-946f-b8da2aa49633>',&
-'@(#)COMPILED:       2022-01-09 19:02:11 UTC-300>',&
+'@(#)COMPILED:       2023-03-18 11:08:09 UTC-240>',&
 '']
    WRITE(*,'(a)')(trim(help_text(i)(5:len_trim(help_text(i))-1)),i=1,size(help_text))
    stop ! if --version was specified, stop
 endif
 end subroutine help_version
+end program find_gcd
