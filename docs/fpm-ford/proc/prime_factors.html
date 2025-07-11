@@ -1,0 +1,469 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Common and Prime Factorization">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>prime_factors &ndash; M_factors</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_factors </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>prime_factors
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="15.8% of total for procedures.">74 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_factor.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_factor.f90.html'>M_factor.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_factor.html'>M_factor</a></li>
+            <li class="breadcrumb-item active" aria-current="page">prime_factors</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/prime_factors.html#src">prime_factors</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine prime_factors(number, nprm, iprm, iexp, verbose)  
+</h2>
+    
+
+    <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">prime_factors</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">M_factor</span><span class="o">]</span><span class="w"> </span><span class="n">decompose</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="n">factors</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<div class="codehilite"><pre><span></span><code>call prime_factors(number,nprm,iprm,iexp[,verbose])
+
+ integer, intent(in)          :: number
+ integer, intent(out)         :: nprm
+ integer, intent(out)         :: iprm(:)
+ integer, intent(out)         :: iexp(:)
+ logical, intent(in),optional :: verbose
+</code></pre></div>
+
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Upon</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">PRIME_FACTORS</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IPRM</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="o">**</span><span class="n">IEXP</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">IPRM</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="o">**</span><span class="n">IEXP</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">...</span><span class="w"></span>
+<span class="w">                 </span><span class="o">*</span><span class="n">IPRM</span><span class="p">(</span><span class="n">NPRM</span><span class="p">)</span><span class="o">**</span><span class="n">IEXP</span><span class="p">(</span><span class="n">NPRM</span><span class="p">)</span><span class="w"></span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">represented</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">(</span><span class="nb">sin</span><span class="n">gle</span><span class="o">-</span><span class="n">precision</span><span class="p">)</span><span class="w"> </span><span class="nb">INT</span><span class="n">EGER</span><span class="w"></span>
+<span class="w">   </span><span class="nb">val</span><span class="n">ue</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">VMS</span><span class="w"> </span><span class="n">VAX</span><span class="w"> </span><span class="n">cluster</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">most</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="n">distinct</span><span class="w"></span>
+<span class="w">   </span><span class="n">prime</span><span class="w"> </span><span class="n">factors</span><span class="mf">.</span><span class="w"> </span><span class="kr">On</span><span class="w"> </span><span class="n">machines</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">maximum</span><span class="w"> </span><span class="nb">int</span><span class="n">eger</span><span class="w"> </span><span class="n">is</span><span class="w"></span>
+<span class="w">   </span><span class="n">larger</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="mf">2</span><span class="o">**</span><span class="mf">31</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="n">IPRM</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">IEXP</span><span class="w"> </span><span class="n">would</span><span class="p">,</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">general</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="n">have</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="kd">dim</span><span class="n">ensioned</span><span class="w"> </span><span class="n">larger</span><span class="w"> </span><span class="nb">sin</span><span class="n">ce</span><span class="w"> </span><span class="n">larger</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="n">may</span><span class="w"></span>
+<span class="w">   </span><span class="n">have</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="n">distinct</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="n">factors</span><span class="mf">.</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="options">OPTIONS</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">NUMBER</span><span class="w">   </span><span class="n">INTEGER</span><span class="w"> </span><span class="n">constant</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">decomposed</span><span class="w"> </span><span class="n">into</span><span class="w"></span>
+<span class="w">         </span><span class="n">prime</span><span class="w"> </span><span class="n">factors</span><span class="o">.</span><span class="w"> </span><span class="n">NUMBER</span><span class="w"> </span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="w"> </span><span class="mf">2.</span><span class="w"></span>
+<span class="w">         </span><span class="n">For</span><span class="w"> </span><span class="mi">32</span><span class="o">-</span><span class="n">bit</span><span class="w"> </span><span class="n">integers</span><span class="w"> </span><span class="n">NUMBER</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2147483647</span><span class="w"></span>
+<span class="n">NPRM</span><span class="w">     </span><span class="n">INTEGER</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">contain</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">distinct</span><span class="w"> </span><span class="n">prime</span><span class="w"></span>
+<span class="w">         </span><span class="n">factors</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">number</span><span class="o">.</span><span class="w"></span>
+<span class="n">IPRM</span><span class="w">     </span><span class="n">INTEGER</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">contain</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">prime</span><span class="w"></span>
+<span class="w">         </span><span class="n">factors</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">number</span><span class="o">.</span><span class="w"></span>
+<span class="n">IEXP</span><span class="w">     </span><span class="n">INTEGER</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">contain</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+<span class="w">         </span><span class="n">exponents</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">prime</span><span class="w"> </span><span class="n">factors</span><span class="o">.</span><span class="w"></span>
+<span class="n">verbose</span><span class="w">  </span><span class="n">optional</span><span class="w"> </span><span class="n">LOGICAL</span><span class="w"> </span><span class="n">constant</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">controls</span><span class="w"> </span><span class="n">printing</span><span class="w"></span>
+<span class="w">         </span><span class="n">of</span><span class="w"> </span><span class="n">results</span><span class="o">.</span><span class="w"></span>
+
+<span class="w">          </span><span class="n">o</span><span class="w"> </span><span class="bp">false</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Results</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">printed</span><span class="o">.</span><span class="w"></span>
+<span class="w">          </span><span class="n">o</span><span class="w"> </span><span class="bp">true</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Results</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">printed</span><span class="o">.</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="example">EXAMPLE</h2>
+<p>Sample program:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_prime_factors</span>
+<span class="nv">use</span> <span class="nv">M_factor</span>, <span class="nv">only</span> : <span class="nv">prime_factors</span>
+<span class="nv">implicit</span> <span class="nv">none</span>
+   <span class="nv">integer</span>  :: <span class="nv">number</span>
+   <span class="nv">integer</span>  :: <span class="nv">iexp</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span>, <span class="nv">iprm</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span>, <span class="nv">nprm</span>
+   <span class="nv">logical</span>  :: <span class="nv">verbose</span><span class="o">=</span>.<span class="nv">true</span>.
+   <span class="nv">integer</span>  :: <span class="nv">ios</span>
+   <span class="k">do</span>
+     <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a)</span><span class="s1">&#39;</span>, <span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="s1">&#39;</span><span class="s"> Enter number to be factored: </span><span class="s1">&#39;</span>
+     <span class="nv">read</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span>,<span class="nv">iostat</span><span class="o">=</span><span class="nv">ios</span>,<span class="k">end</span><span class="o">=</span><span class="mi">999</span><span class="ss">)</span> <span class="nv">number</span>
+     <span class="k">if</span><span class="ss">(</span><span class="nv">ios</span>.<span class="nv">eq</span>.<span class="mi">0</span><span class="ss">)</span><span class="k">then</span>
+        <span class="k">call</span> <span class="nl">prime_factors</span><span class="ss">(</span><span class="nv">number</span>, <span class="nv">nprm</span>, <span class="nv">iprm</span>, <span class="nv">iexp</span>, <span class="nv">verbose</span><span class="ss">)</span>
+     <span class="k">endif</span>
+   <span class="nv">enddo</span>
+<span class="mi">999</span> <span class="k">continue</span>
+<span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_prime_factors</span>
+</code></pre></div>
+
+<h2 id="pedigree">PEDIGREE</h2>
+<div class="codehilite"><pre><span></span><code>o Coded at Madison Academic Computing Center,
+  University of Wisconsin, Madison
+o FORTRAN 77 Version 1988.09
+o Code converted using TO_F90 by Alan Miller, 2000-07-14T11:42:45
+o Fortran 2003 version 20160918 by John S. Urban
+</code></pre></div>
+
+<p>! write (<em>,&rsquo;(</em>(&ldquo;(&ldquo;,i0,&rdquo;*<em>&ldquo;,i0,&rdquo;)&rdquo;:,&rdquo;</em>&rdquo;))&rsquo;) (iprm(ii),iexp(ii),ii=1,nprm)</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-number~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>number</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nprm~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nprm</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iprm~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iprm</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iexp~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iexp</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-verbose~6"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>verbose</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">prime_factors</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">nprm</span><span class="p">,</span><span class="w"> </span><span class="n">iprm</span><span class="p">,</span><span class="w"> </span><span class="n">iexp</span><span class="p">,</span><span class="w"> </span><span class="n">verbose</span><span class="p">)</span><span class="w"></span>
+<span class="k">implicit none</span><span class="w"></span>
+
+<span class="c">! ident_10=&quot;@(#) M_factor prime_factors(3f) decompose a number into its prime factors&quot;</span>
+
+<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">number</span><span class="w">  </span><span class="c">! number to factor</span>
+<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">nprm</span><span class="w">    </span><span class="c">! number of distinct prime factors</span>
+<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">iprm</span><span class="p">(:)</span><span class="w"> </span><span class="c">! distinct prime factors found, assumed dimensioned to at least 9</span>
+<span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">iexp</span><span class="p">(:)</span><span class="w"> </span><span class="c">! exponents of the corresponding prime factors in IPRM</span>
+<span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">verbose</span><span class="w"> </span><span class="c">! .false. no printing; .true. print results</span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!--------LOCAL VARIABLES</span>
+<span class="w">   </span><span class="kt">integer</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">div</span><span class="p">,</span><span class="w"> </span><span class="n">indx</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="n">olddiv</span><span class="p">,</span><span class="w"> </span><span class="n">quo</span><span class="p">,</span><span class="w"> </span><span class="n">rem</span><span class="w"></span>
+<span class="w">   </span><span class="c">!---------data to obtain trial divisors 2, 3, 5, 7 and all higher numbers not divisible by 2, 3, 5, 7.</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">base</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="w">   </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">       </span><span class="mi">211</span><span class="p">,</span><span class="w"> </span><span class="mi">209</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="p">,</span><span class="w"> </span><span class="mi">197</span><span class="p">,</span><span class="w"> </span><span class="mi">193</span><span class="p">,</span><span class="w"> </span><span class="mi">191</span><span class="p">,</span><span class="w"> </span><span class="mi">187</span><span class="p">,</span><span class="w"> </span><span class="mi">181</span><span class="p">,</span><span class="w"> </span><span class="mi">179</span><span class="p">,</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span><span class="w"> </span><span class="mi">169</span><span class="p">,</span><span class="w"> </span><span class="mi">167</span><span class="p">,</span><span class="w"> </span><span class="mi">163</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">       </span><span class="mi">157</span><span class="p">,</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w"> </span><span class="mi">149</span><span class="p">,</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w"> </span><span class="mi">139</span><span class="p">,</span><span class="w"> </span><span class="mi">137</span><span class="p">,</span><span class="w"> </span><span class="mi">131</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w"> </span><span class="mi">107</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">       </span><span class="mi">101</span><span class="p">,</span><span class="w">  </span><span class="mi">97</span><span class="p">,</span><span class="w">  </span><span class="mi">89</span><span class="p">,</span><span class="w">  </span><span class="mi">83</span><span class="p">,</span><span class="w">  </span><span class="mi">79</span><span class="p">,</span><span class="w">  </span><span class="mi">73</span><span class="p">,</span><span class="w">  </span><span class="mi">71</span><span class="p">,</span><span class="w">  </span><span class="mi">67</span><span class="p">,</span><span class="w">  </span><span class="mi">61</span><span class="p">,</span><span class="w">  </span><span class="mi">59</span><span class="p">,</span><span class="w">  </span><span class="mi">53</span><span class="p">,</span><span class="w">  </span><span class="mi">47</span><span class="p">,</span><span class="w">  </span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="mi">41</span><span class="p">,</span><span class="w">  </span><span class="mi">37</span><span class="p">,</span><span class="w">  </span><span class="mi">31</span><span class="p">,</span><span class="w">  </span><span class="mi">29</span><span class="p">,</span><span class="w">  </span><span class="mi">23</span><span class="p">,</span><span class="w">  </span><span class="mi">19</span><span class="p">,</span><span class="w">  </span><span class="mi">17</span><span class="p">,</span><span class="w">  </span><span class="mi">13</span><span class="p">,</span><span class="w">  </span><span class="mi">11</span><span class="p">,</span><span class="w">   </span><span class="mi">7</span><span class="p">,</span><span class="w">   </span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="c">!--------FORMAT TEMPLATE</span>
+<span class="w">   </span><span class="kt">logical</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">verbose_local</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">verbose</span><span class="p">))</span><span class="k">then</span>
+<span class="k">      </span><span class="n">verbose_local</span><span class="o">=</span><span class="n">verbose</span><span class="w"></span>
+<span class="w">   </span><span class="k">else</span>
+<span class="k">      </span><span class="n">verbose_local</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">   </span><span class="k">endif</span><span class="w"></span>
+<span class="w">   </span><span class="c">!--------CHECK NUMBER.  MUST BE .GE. 2</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!--------ERROR, ISSUE MESSAGE AND TAKE ERROR EXIT.</span>
+<span class="w">      </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(&#39; *** ERROR IN PRIME_FACTORS, NUMBER =&#39;, i12, &#39;, NUMBER MUST BE &gt;= 2&#39;)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">number</span><span class="w"></span>
+<span class="w">      </span><span class="n">nprm</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">   endif</span><span class="w"></span>
+<span class="w">   </span><span class="c">!--------INITIALIZATIONS.</span>
+<span class="w">   </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">   </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="w"></span>
+<span class="w">   </span><span class="n">olddiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">   </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">   </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">53</span><span class="w"></span>
+<span class="w">   </span><span class="c">!--------GET NEXT TRIAL DIVISOR.</span>
+<span class="w">   </span><span class="k">do</span>
+<span class="k">     </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indx</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       </span><span class="n">indx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">48</span><span class="w"></span>
+<span class="w">       </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">210</span><span class="w"></span>
+<span class="w">     </span><span class="k">endif</span>
+<span class="k">     </span><span class="n">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">base</span><span class="p">(</span><span class="n">indx</span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="c">!--------TEST TRIAL DIVISOR.</span>
+<span class="w">        </span><span class="k">do</span>
+<span class="k">           </span><span class="n">quo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">div</span><span class="w"></span>
+<span class="w">           </span><span class="n">rem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">quo</span><span class="o">*</span><span class="n">div</span><span class="w"></span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rem</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span><span class="w"></span>
+<span class="w">           </span><span class="c">!--------FACTOR FOUND, ZERO REMAINDER.</span>
+<span class="w">           </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quo</span><span class="w"></span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">div</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">olddiv</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">             </span><span class="c">!--------MULTIPLE FACTOR.</span>
+<span class="w">             </span><span class="n">iexp</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iexp</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">             </span><span class="k">cycle</span>
+<span class="k">           endif</span><span class="w"></span>
+<span class="w">           </span><span class="c">!--------NEW FACTOR.</span>
+<span class="w">           </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">iprm</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">div</span><span class="w"></span>
+<span class="w">           </span><span class="n">iexp</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">olddiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">div</span><span class="w"></span>
+<span class="w">        </span><span class="k">enddo</span><span class="w"></span>
+<span class="w">        </span><span class="c">!--------NOT A FACTOR, POSITIVE REMAINDER.  CHECK DIVISOR SIZE.</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">div</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">quo</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">   enddo</span><span class="w"></span>
+<span class="w">   </span><span class="c">!--------FINISHED, WHAT ISN&#39;T FACTORED IS A PRIME (OR 1).</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="n">iexp</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="n">iprm</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="w">   </span><span class="k">endif</span>
+<span class="k">   </span><span class="n">nprm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">verbose_local</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">                                           </span><span class="c">!--------PRINT RESULTS IF REQUESTED.</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">nprm</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">iexp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">                           </span><span class="c">!--------NUMBER IS COMPOSITE</span>
+<span class="w">         </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;( t3, i0, &#39; factors as &#39;)&quot;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">number</span><span class="w"></span>
+
+<span class="w">         </span><span class="c">!*! write (*,&#39;(*(&quot;(&quot;,i0,&quot;**&quot;,i0,&quot;)&quot;:,&quot;*&quot;))&#39;) (iprm(ii),iexp(ii),ii=1,nprm)</span>
+<span class="w">         </span><span class="k">do </span><span class="n">ii</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nprm</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">iexp</span><span class="p">(</span><span class="n">ii</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span><span class="k">then</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(i0)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">iprm</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(&quot;(&quot;,i0,&quot;**&quot;,i0,&quot;)&quot;)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">iprm</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span><span class="n">iexp</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">            if</span><span class="p">(</span><span class="n">ii</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">nprm</span><span class="p">)</span><span class="k">then</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">               write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(&quot;*&quot;)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">         enddo</span>
+
+<span class="k">      else</span>
+<span class="k">         write</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;( t3, i0, &#39; IS A PRIME NUMBER&#39; )&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">number</span><span class="w">         </span><span class="c">!--------NUMBER IS PRIME</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">   endif</span>
+<span class="k">end subroutine </span><span class="n">prime_factors</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              M_factors
+ was developed by John S. Urban<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-07-11 01:27 +0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
